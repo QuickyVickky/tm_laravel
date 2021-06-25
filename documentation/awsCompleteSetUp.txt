@@ -1,0 +1,96 @@
+AWS Complete SetUp
+
+
+
+
+https://usefulangle.com/post/324/aws-ec2-install-linux-apache-mysql-php-phpmyadmin-lamp-stack-ubuntu-20-04
+---------------------------------------------------------------------------------------------------------------------------------------
+Step 1 - Updating the Package List. Update the package list on the instance so that we can have the latest available versions of Apache,
+PHP, MySql and phpMyAdmin.
+Ans : sudo apt-get update
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Step 2 - Installing Apache.
+Ans : sudo apt-get install apache2
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Step 3 - Installing MySQL
+Ans : 
+1. Install MySQL using the following command : sudo apt-get install mysql-server
+2. After installation is complete, the mysql database is strengthened using the following command: sudo mysql_secure_installation
+3. In the next screen we will be asked whether we need to setup VALIDATE PASSWORD plugin. We selected no.
+4. Set the password for the root MySql account.
+5. Remove anonymous users? We selected yes.
+6. Disallow root login remotely? We selected no.
+7. Remove test database and access to it? We chose yes.
+8. Reload privilege tables now? We again chose yes.
+9. Following installation we can login into MySQL by executing the following command: sudo mysql -u root -p
+10. Entering the password in the prompt, we can login into MySQL and will be greeted by the mysql prompt. Type exit to get out of MySQL.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Step 4 - Installing PHP with Common Extensions.
+1. Install PHP and commonly used extensions through the following command.
+sudo apt-get install php libapache2-mod-php php-mysql php-curl php-gd php-json php-zip
+2. After PHP has been installed, restart Apache using the following command: 
+
+sudo service apache2 restart
+
+---------------------------------------------------------------------------------------------------------------------------------------
+Step 5 - Installing phpMyAdmin.
+1. Install phpMyAdmin through the command : sudo apt-get install phpmyadmin
+---------------------------------------------------------------------------------------------------------------------------------------
+Step 6 - Allowing MySQL Root Login Through phpMyAdmin. This is an optional step and will allow the root MySQL user to login through phpMyAdmin.
+
+1. Login to MySql root. 
+
+sudo mysql -u root -p
+
+2. Change authentication method for the root account to mysql_native_password by executing the following query.
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'password';
+
+3. To put the changes into effect, execute the following query :
+
+FLUSH PRIVILEGES;
+
+4. Following this, we can now do a root login through phpMyAdmin. The username is root and password is the one that was setup earlier while installing MySQL.
+
+5. Return back to the command line. exit
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+sudo chown -R ubuntu /var/www/html
+sudo chmod -R 755 /var/www/html
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

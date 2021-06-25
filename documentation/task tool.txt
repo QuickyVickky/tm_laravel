@@ -1,0 +1,198 @@
+Admin:
+*1. Can add users and generate credentails
+*2. Add/edit/delete projects and Sub category (User web, Customer web)
+- Project name.  [delete remaining]
+*3. Add/edit/delete/view employee/project wise task list with hours and days [delete remaining]
+
+
+ADMIN FLOW:
+
+List of employees -> Project done by employee -> task list in project -> admin can select date to check task of particular date
+List of projects -> total employees on single project -> total hours work done by employee on single project
+
+User:
+
+1. Login
+2. Form
+- Project select
+- Subcategory select
+- Date select (can add only 1 day data, for example: if someone forget on 7th then can add data on 8th. But not after 1 day)
+- Add task in detail
+- Can not edit once submitted (only admin can edit)
+- Can view submitted task list only
+
+3. Dashboard
+- All projects -> can view list of task and hours and days work on this project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db-
+103.160.144.75===old
+
+103.20.212.253===new
+
+hostapps_taskmanagement
+dbusernametask
+&Ei346je
+
+ftptaskmanage
+Bjs^06g9
+
+
+
+
+https://taskmanagement.hostappshere.co.in/public/adminside/project-list
+admin@gmail.com
+admin@123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALTER TABLE `projects`  ADD `start_date` DATE NULL DEFAULT NULL  AFTER `updated_at`,  ADD `end_date` DATE NULL DEFAULT NULL  AFTER `start_date`;
+
+24052021--
+ALTER TABLE `projects`  ADD `is_deployed` TINYINT(1) NOT NULL DEFAULT '0' COMMENT '0-no, 1-yes'  AFTER `is_active`;
+
+
+
+---------------------------------------------------------------------------------------------------
+DATE = 20/5/2021
+
+
+Admin:
+
+
+done--1. Dashboard 
+***- all projects and employees count and on click it should redirect to lsit of projects and employees added by admin
+
+
+done--2. Projects
+***- List of projects and there should tag of (active/deactive/deployed) + Start date + end date (only admin can see date)
+***- Add projects -> project name -> selecte category (can add category from here or in different page) -> Description -> active/deactive/deployed -> save
+***- All daily task -> is perfect, just set "apply filter" and "export" function just after "project" dropdown -> option for remove filter
+
+
+done--3. Employees
+***-> Add employees
+***-> List of employees -> show employee id or serial number (it helps while we have same name/designation) -> show active/deactive tag -> can assign projects from here only with confirmation popup and also please show list of assigned projects only in view mode, not all projects. 
+(no need to show email in list view -> Name,Mobile,Tag,Assign,active and assigned projects count,View)
+***-> Update employee -> set edit button like submit -> when click on edit it will change name of submit. 
+***--> Update employee -> for change password -> ask confirmation
+
+
+DEVELOPER/EMPLOYEE :
+	
+	**While adding task if developer has added 8:30 hours already then it should ask for overtime hours to add. As right now I can add multiple time 8:30 hours which is not right. Once I added 8:30 hours, it will ask to add overtime hours and it will be highlight to both developer and admin in red mark. Like -> 8:30 hours [2 hours, in red tag/mark].
+
+	***Option for remove filter after applying.
+
+	***In project list, there will be tag of active/deployed [employee won't able to see deactive projects].
+
+	***In task description -> I am adding content of 10 lines so it is not showing properly in list view so better to restrict after few words and in view detail -> show task list without scroll so user can easily view task.
+
+---------------------------------------------------------------------------------------------------
+
+
+
+26-05-2021--
+
+1. in project list - only one status one can see, active means - project working, deactive means - project not in working, deployed means - on client server. So only one status at a time.
+Ans: Changes Updated.
+
+2. Please show project start month-year in list view in admin only. Like cvgig - May-2021
+Ans: Changes Updated.
+
+
+3. When I add projects - there should drop down for category. Category means, Mobile app, APIs, Dynamic web, Static web. So all these if we add once then admin can select from drop down and if admin wants to add new then also can add new.
+Ans: Added.
+ 
+
+4. If I want to add task list after 8:30 hours then it will ask is this overtime hours? If yes then it will add in task list but admin can see that extra time in over time field. Same in the employee side, they can see their daily time and overtime field. 
+Ans: Added.
+
+
+5. In employee, if I add task from dashboard then once it submit, it will redirect to task list so employees can see task directly. 
+Ans: Changes Added.
+
+6. employees - In task list - if I add something in search bar then it continuely showing error popup and search is not working
+Ans: Error Solved.
+
+7. In dashboard in both employee/admin - in chart view - in right corner which menu it showing?
+Ans: https://prnt.sc/13fgj1y
+
+8. In admin - what is the need of assigned project menu in admin ?
+Ans: Admin can assign any project itself & can add their own task details [that can be anything] as like employee.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8284z!WW7iAbZkG
+
+
+
+
